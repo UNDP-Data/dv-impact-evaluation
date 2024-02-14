@@ -19,7 +19,6 @@ interface Props {
   height: number;
   dateFormat: string;
   noOfXTicks: number;
-  labels: string[];
   topMargin: number;
   bottomMargin: number;
   leftMargin: number;
@@ -49,7 +48,6 @@ export function Graph(props: Props) {
     colors,
     dateFormat,
     noOfXTicks,
-    labels,
     rightMargin,
     topMargin,
     bottomMargin,
@@ -139,6 +137,7 @@ export function Graph(props: Props) {
       onSeriesMouseOver(undefined);
     }
   }, [x, dataFormatted]);
+
   return (
     <>
       <svg
@@ -204,54 +203,15 @@ export function Graph(props: Props) {
           </g>
           <g>
             {dataArray.map((d, i) => (
-              <>
-                <path
-                  key={i}
-                  d={lineShape(d as any) as string}
-                  fill='none'
-                  style={{
-                    stroke: colors[i],
-                  }}
-                  strokeWidth={2}
-                />
-                <g>
-                  {d.map((el, j) => (
-                    <g key={j}>
-                      {el.y !== undefined ? (
-                        <g>
-                          <circle
-                            cx={x(el.date)}
-                            cy={y(el.y)}
-                            r={
-                              graphWidth / dataFormatted.length < 5
-                                ? 0
-                                : graphWidth / dataFormatted.length < 20
-                                ? 2
-                                : 4
-                            }
-                            style={{
-                              fill: colors[i],
-                            }}
-                          />
-                        </g>
-                      ) : null}
-                    </g>
-                  ))}
-                </g>
-                <text
-                  style={{
-                    fill: colors[i],
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                  }}
-                  x={x(d[d.length - 1].date)}
-                  y={y(d[d.length - 1].y as number)}
-                  dx={5}
-                  dy={4}
-                >
-                  {labels[i]}
-                </text>
-              </>
+              <path
+                key={i}
+                d={lineShape(d as any) as string}
+                fill='none'
+                style={{
+                  stroke: colors[i],
+                }}
+                strokeWidth={2}
+              />
             ))}
             {mouseOverData ? (
               <line
@@ -274,12 +234,8 @@ export function Graph(props: Props) {
           />
         </g>
       </svg>
-      {mouseOverData?.data && tooltip && eventX && eventY ? (
-        <Tooltip
-          body={tooltip(mouseOverData.data)}
-          xPos={eventX}
-          yPos={eventY}
-        />
+      {mouseOverData && tooltip && eventX && eventY ? (
+        <Tooltip body={tooltip(mouseOverData)} xPos={eventX} yPos={eventY} />
       ) : null}
     </>
   );

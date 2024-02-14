@@ -4,6 +4,7 @@ import { Graph } from './Graph';
 import { MultiLineChartDataType } from '../../../../Types';
 import { GraphFooter } from '../../../Elements/GraphFooter';
 import { GraphHeader } from '../../../Elements/GraphHeader';
+import { ColorLegend } from '../../../Elements/ColorLegend';
 
 interface Props {
   data: MultiLineChartDataType[];
@@ -15,6 +16,8 @@ interface Props {
   width?: number;
   height?: number;
   source?: string;
+  source2?: string;
+  sourceLink2?: string;
   noOfXTicks?: number;
   dateFormat?: string;
   labels: string[];
@@ -48,6 +51,8 @@ export function MultiLineChart(props: Props) {
     rightMargin,
     topMargin,
     bottomMargin,
+    source2,
+    sourceLink2,
     tooltip,
     onSeriesMouseOver,
   } = props;
@@ -96,6 +101,10 @@ export function MultiLineChart(props: Props) {
             graphDescription={graphDescription}
           />
         ) : null}
+        <ColorLegend
+          colorDomain={labels}
+          colors={colors || UNDPColorModule.categoricalColors.colors}
+        />
         <div
           style={{
             flexGrow: 1,
@@ -118,9 +127,8 @@ export function MultiLineChart(props: Props) {
               rightMargin={rightMargin === undefined ? 30 : rightMargin}
               topMargin={topMargin === undefined ? 20 : topMargin}
               bottomMargin={bottomMargin === undefined ? 25 : bottomMargin}
-              labels={labels}
-              tooltip={tooltip}
               onSeriesMouseOver={onSeriesMouseOver}
+              tooltip={tooltip}
             />
           ) : null}
         </div>
@@ -129,6 +137,8 @@ export function MultiLineChart(props: Props) {
             source={source}
             sourceLink={sourceLink}
             footNote={footNote}
+            source2={source2}
+            sourceLink2={sourceLink2}
           />
         ) : null}
       </div>
