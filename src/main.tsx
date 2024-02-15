@@ -17,8 +17,6 @@ const getEl = (embedSelector: string) => {
 };
 
 const vizAssessments = getEl('[data-viz-assessments]');
-const vizMap = getEl('[data-viz-map]');
-
 if (vizAssessments) {
   const rootEmbed = ReactDOM.createRoot(vizAssessments);
   rootEmbed.render(
@@ -26,7 +24,10 @@ if (vizAssessments) {
       <AppVizAssessments />
     </React.StrictMode>,
   );
-} else if (vizMap) {
+}
+
+const vizMap = getEl('[data-viz-map]');
+if (vizMap) {
   const rootEmbed = ReactDOM.createRoot(vizMap);
   rootEmbed.render(
     <React.StrictMode>
