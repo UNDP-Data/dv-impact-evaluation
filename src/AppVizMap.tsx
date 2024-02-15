@@ -37,8 +37,8 @@ function TooltipMap(props: TooltipProps) {
       onMouseLeave={onMouseLeave}
       style={{
         position: 'absolute',
-        left: x + 20,
-        top: y + 20,
+        left: x,
+        top: y,
         transform: 'translate(-50%, -100%)',
         padding: '1rem',
         backgroundColor: 'white',
@@ -48,12 +48,13 @@ function TooltipMap(props: TooltipProps) {
       }}
     >
       <p className='undp-typography small-font margin-bottom-00'>
-        <span className='bold'>Country: </span>
+        <span className='bold small-font'>Country: </span>
         {content}
       </p>
       {households ? (
         <p className='undp-typography small-font margin-bottom-00'>
-          <span className='bold'>Interviewed households:</span> {households}
+          <span className='bold small-font'>Interviewed households:</span>{' '}
+          {households}
         </p>
       ) : null}
       <a
