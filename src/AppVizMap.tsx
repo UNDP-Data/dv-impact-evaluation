@@ -39,7 +39,7 @@ function TooltipMap(props: TooltipProps) {
       style={{
         position: 'absolute',
         left: x,
-        top: y,
+        top: y - 80,
         transform: 'translate(-50%, -100%)',
         padding: '1rem',
         backgroundColor: 'white',
