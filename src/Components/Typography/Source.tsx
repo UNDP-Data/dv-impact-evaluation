@@ -18,7 +18,7 @@ export function Source(props: SourceProps) {
       Source:{' '}
       {link ? (
         <a
-          className='undp-style'
+          className='undp-style small-font'
           style={{ color: 'var(--gray-600)' }}
           href={link}
           target='_blank'
@@ -31,7 +31,7 @@ export function Source(props: SourceProps) {
       )}
       {link2 ? (
         <a
-          className='undp-style'
+          className='undp-style small-font'
           style={{ color: 'var(--gray-600)' }}
           href={link2}
           target='_blank'

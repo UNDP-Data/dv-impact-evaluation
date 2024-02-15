@@ -163,7 +163,7 @@ function AppVizMap() {
   };
 
   return (
-    <div className='undp-container flex-div flex-wrap flex-hor-align-center margin-top-13 margin-bottom-13'>
+    <div className='undp-container flex-div flex-wrap flex-hor-align-center'>
       <svg
         style={{
           height: 'auto',
