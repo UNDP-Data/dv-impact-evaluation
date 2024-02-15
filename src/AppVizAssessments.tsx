@@ -27,7 +27,7 @@ function AppVizAssessments() {
           </h6>
           <p
             className='
-undp-typography small-font'
+undp-typography small-font margin-bottom-05'
           >
             {d.date.getFullYear().toString()}
           </p>
