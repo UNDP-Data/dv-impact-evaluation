@@ -37,9 +37,9 @@ function TooltipMap(props: TooltipProps) {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={{
-        position: 'absolute',
-        left: x + 20,
-        top: y + 20,
+        position: 'fixed',
+        left: x,
+        top: y,
         transform: 'translate(-50%, -100%)',
         padding: '1rem',
         backgroundColor: 'white',
@@ -166,10 +166,7 @@ function AppVizMap() {
   };
 
   return (
-    <div
-      style={{ position: 'relative' }}
-      className='undp-container flex-div flex-wrap flex-hor-align-center'
-    >
+    <div className='undp-container flex-div flex-wrap flex-hor-align-center'>
       <svg
         ref={svgRef}
         style={{
