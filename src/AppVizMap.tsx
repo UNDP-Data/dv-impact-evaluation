@@ -39,7 +39,7 @@ function TooltipMap(props: TooltipProps) {
       style={{
         position: 'absolute',
         left: x,
-        top: y - 80,
+        top: y + 20,
         transform: 'translate(-50%, -100%)',
         padding: '1rem',
         backgroundColor: 'white',
@@ -71,7 +71,8 @@ function TooltipMap(props: TooltipProps) {
 }
 
 function AppVizMap() {
-  const svgRef = useRef(null); // Ref for the SVG container
+  const svgRef = useRef(null);
+
   const [tooltip, setTooltip] = useState({
     visible: false,
     content: '',
@@ -88,7 +89,7 @@ function AppVizMap() {
     households: any,
     countryCode: string,
   ) => {
-    const [x, y] = pointer(event, svgRef);
+    const [x, y] = pointer(event, svgRef.current);
     setTooltip(prev => ({
       ...prev,
       visible: true,
@@ -166,7 +167,10 @@ function AppVizMap() {
   };
 
   return (
-    <div className='undp-container flex-div flex-wrap flex-hor-align-center'>
+    <div
+      style={{ position: 'relative' }}
+      className='undp-container flex-div flex-wrap flex-hor-align-center'
+    >
       <svg
         ref={svgRef}
         style={{
