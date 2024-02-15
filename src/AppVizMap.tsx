@@ -41,9 +41,9 @@ function TooltipMap(props: TooltipProps) {
         left: x,
         top: y + 20,
         transform: 'translate(-50%, -100%)',
-        padding: '1rem',
-        backgroundColor: 'white',
-        border: '1px solid #ddd',
+        padding: '1rem 1.5rem',
+        backgroundColor: 'var(--gray-200)',
+        border: '1px solid var(--gray-300)',
         zIndex: 1000,
         fontSize: '16px',
       }}
