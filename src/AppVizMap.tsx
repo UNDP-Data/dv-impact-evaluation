@@ -37,7 +37,7 @@ function TooltipMap(props: TooltipProps) {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       style={{
-        position: 'fixed',
+        position: 'absolute',
         left: x,
         top: y,
         transform: 'translate(-50%, -100%)',
@@ -83,7 +83,7 @@ function AppVizMap() {
   });
 
   const handleMouseEnter = (
-    event: React.MouseEvent,
+    event: any,
     content: string,
     households: any,
     countryCode: string,
