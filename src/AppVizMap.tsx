@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
+import { pointer } from 'd3-selection';
 
 interface TooltipProps {
   content: string;
@@ -37,8 +38,8 @@ function TooltipMap(props: TooltipProps) {
       onMouseLeave={onMouseLeave}
       style={{
         position: 'absolute',
-        left: x,
-        top: y,
+        left: x + 20,
+        top: y + 20,
         transform: 'translate(-50%, -100%)',
         padding: '1rem',
         backgroundColor: 'white',
@@ -70,6 +71,7 @@ function TooltipMap(props: TooltipProps) {
 }
 
 function AppVizMap() {
+  const svgRef = useRef(null); // Ref for the SVG container
   const [tooltip, setTooltip] = useState({
     visible: false,
     content: '',
@@ -86,7 +88,7 @@ function AppVizMap() {
     households: any,
     countryCode: string,
   ) => {
-    const { clientX: x, clientY: y } = event;
+    const [x, y] = pointer(event, svgRef);
     setTooltip(prev => ({
       ...prev,
       visible: true,
@@ -169,6 +171,7 @@ function AppVizMap() {
       className='undp-container flex-div flex-wrap flex-hor-align-center'
     >
       <svg
+        ref={svgRef}
         style={{
           height: 'auto',
           width: '100%',
