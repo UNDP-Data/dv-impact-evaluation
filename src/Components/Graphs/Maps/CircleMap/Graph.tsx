@@ -212,38 +212,65 @@ export function Graph(props: Props) {
             const point = projection([lon, lat]) as [number, number];
 
             return (
-              <a
-                key={`link-${i}`}
-                target='_blank'
-                href={`https://data.undp.org/insights/evidence-informed-interventions/${d.countryCode}`}
-                rel='noreferrer'
+              <g
+                key={i}
+                onMouseEnter={event => {
+                  setMouseOverData(d);
+                  setEventY(event.clientY);
+                  setEventX(event.clientX);
+                  if (onSeriesMouseOver) {
+                    onSeriesMouseOver(d);
+                  }
+                }}
+                onMouseMove={event => {
+                  setMouseOverData(d);
+                  setEventY(event.clientY);
+                  setEventX(event.clientX);
+                }}
+                onMouseLeave={() => {
+                  setMouseOverData(undefined);
+                  setEventX(undefined);
+                  setEventY(undefined);
+                  if (onSeriesMouseOver) {
+                    onSeriesMouseOver(undefined);
+                  }
+                }}
               >
-                <circle
-                  key={`circle-${i}`}
-                  cx={point[0]}
-                  cy={point[1]}
-                  r='7'
-                  fill={d.status === 'In progress' ? '#E8862E80' : '#006EB580'}
-                  stroke={d.status === 'In progress' ? '#E8862E' : '#006EB5'}
-                />
-                <Label
-                  key={`text-${i}`}
-                  x={
-                    d.countryCode === 'IND' || d.countryCode === 'ZMB'
-                      ? point[0] - 14
-                      : point[0] + 14
-                  }
-                  y={point[1] + 1}
-                  textAnchor={
-                    d.countryCode === 'IND' || d.countryCode === 'ZMB'
-                      ? 'end'
-                      : 'start'
-                  }
-                  alignmentBaseline='middle'
+                <a
+                  key={`link-${i}`}
+                  target='_blank'
+                  href={`https://data.undp.org/insights/evidence-informed-interventions/${d.countryCode}`}
+                  rel='noreferrer'
                 >
-                  {countryFeature.properties.NAME}
-                </Label>
-              </a>
+                  <circle
+                    key={`circle-${i}`}
+                    cx={point[0]}
+                    cy={point[1]}
+                    r='7'
+                    fill={
+                      d.status === 'In progress' ? '#E8862E80' : '#006EB580'
+                    }
+                    stroke={d.status === 'In progress' ? '#E8862E' : '#006EB5'}
+                  />
+                  <Label
+                    key={`text-${i}`}
+                    x={
+                      d.countryCode === 'IND' || d.countryCode === 'ZMB'
+                        ? point[0] - 14
+                        : point[0] + 14
+                    }
+                    y={point[1] + 1}
+                    textAnchor={
+                      d.countryCode === 'IND' || d.countryCode === 'ZMB'
+                        ? 'end'
+                        : 'start'
+                    }
+                    alignmentBaseline='middle'
+                  >
+                    {countryFeature.properties.NAME}
+                  </Label>
+                </a>
+              </g>
             );
           })}
           {mouseOverData
