@@ -43,9 +43,10 @@ export interface DonutChartDataType {
 }
 
 export interface ChoroplethMapDataType {
-  x: number;
+  x: number | undefined;
   countryCode: string;
   data?: object;
+  status: string;
 }
 
 export interface BivariateMapDataType {
