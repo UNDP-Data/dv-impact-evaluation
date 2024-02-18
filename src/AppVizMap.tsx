@@ -110,7 +110,6 @@ function AppVizMap() {
         { countryCode: 'MNG', x: undefined, status: 'In progress' },
         { countryCode: 'IND', x: undefined, status: 'In progress' },
       ]}
-      graphDescription='Hover over the dots to explore details'
       height={780}
       scale={250}
       tooltip={tooltip}
