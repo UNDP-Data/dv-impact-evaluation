@@ -33,7 +33,7 @@ export function Graph(props: Props) {
   const projection = geoEqualEarth()
     .rotate([0, 0])
     .scale(scale)
-    .translate([svgWidth / 2, svgHeight / 2]);
+    .translate([svgWidth / 2 - 30, svgHeight / 2]);
   return (
     <>
       <svg
