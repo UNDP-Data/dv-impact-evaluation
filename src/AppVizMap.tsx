@@ -1,4 +1,5 @@
 /* eslint-disable no-irregular-whitespace */
+import { PanelTop } from 'lucide-react';
 import { ChoroplethMap } from './Components/Graphs/Maps/CircleMap';
 import World from './Components/Graphs/Maps/MapData/worldMap.json';
 
@@ -21,7 +22,7 @@ const tooltip = (d: any) => {
       </div>
       <div style={{ padding: '1rem 1.5rem' }}>
         <div key={d.countryCode}>
-          <div className='flex-div flex-column gap-02 flex-vert-align-center margin-bottom-04'>
+          <div className='flex-div flex-column gap-02 flex-vert-align-center margin-bottom-00'>
             <div
               style={{ width: '100%' }}
               className='flex-div flex-row flex-space-between'
@@ -35,7 +36,6 @@ const tooltip = (d: any) => {
               <p
                 className='undp-typography margin-bottom-00'
                 style={{
-                  textTransform: 'uppercase',
                   fontSize: '1rem',
                   fontWeight: 700,
                   padding: 0,
@@ -70,15 +70,20 @@ const tooltip = (d: any) => {
                 </p>
               </div>
             ) : null}
-            <div className='margin-top-04 margin-bottom-00'>
+            <div
+              className='margin-top-06 padding-top-02 gap-03 margin-bottom-00 flex-div flex-row flex-vert-align-center'
+              style={{ borderTop: '1px solid var(--gray-400)' }}
+            >
+              <PanelTop size={48} strokeWidth={1} color='var(--gray-600)' />
               <p
-                className='undp-typography small-font padding-top-03 margin-bottom-00'
+                className='undp-typography small-font margin-bottom-00'
                 style={{
                   color: 'var(--gray-600)',
-                  borderTop: '1px solid var(--gray-400)',
+                  lineHeight: '110%',
                 }}
               >
-                For assessment details, click on the corresponding country dot
+                Access a country&apos;s assessment page by clicking
+                on the corresponding dot
               </p>
             </div>
           </div>
