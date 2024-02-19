@@ -1,13 +1,11 @@
-# Project Title
-#### Project description [Click here to see the interface]({{link to the site here}}).
-
-Doc for the starter kit can be found [here](https://orange-bay-04736e710.4.azurestaticapps.net/)
+# Impact Evaluation Data Visualization
+#### This project aims to provide interactive visualizations for exploring impact evaluation data [Click here to see the interface]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}}).
 
 ## Table of Contents
 * [Link for the visualization](#section-01)
 * [Deployment](#deployment)
 * [Steps to integrate the vis in static page](#section-02)
-* [Pages on DFP where This Viz is Used](#section-03)
+* [Pages on DFx where This Viz is Used](#section-03)
 * [Related Repos](#section-04)
 * [Global CSS Files and Repo](#section-05)
 * [Build With](#section-06)
@@ -17,16 +15,26 @@ Doc for the starter kit can be found [here](https://orange-bay-04736e710.4.azure
 * [Tooling Setup](#section-10)
 
 ## Link for the visualization<a name="section-01"></a>
-[{{link to the site here}}]({{link to the site here}})
+[{{https://gentle-smoke-004caf210.4.azurestaticapps.net}}]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}})
 
 ## Deployment<a name="deployment"></a>
-The Production site deployed using Azure Static Web App and work flow can be found [here]({{link to the site here}})
+The Production site deployed using Azure Static Web App and work flow can be found [here]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}})
 
-## Steps to Integrating the Visualization in the Data Future Platform or Any Other Page<a name="section-02"></a>
+## Steps to Integrating the Visualization in the Data Futures Exchange or Any Other Page<a name="section-02"></a>
 Add the following div in the page
+The Dambbell Chart Visualization for the Bangladesh page
 ```
-<div id="root"></div>
+<div data-viz-bangladesh id="root"></div>
 ```
+The Map Visualization for the landing page
+```
+<div data-viz-map id="root"></div>
+```
+The Line Chart Visualization for the landing page
+```
+<div data-viz-assessments id="root"></div>
+```
+
 
 Apart from the mentioned `div` above the following `script` and `link` needs to be added to the `head` or in the embed code
 ```
@@ -36,11 +44,11 @@ Apart from the mentioned `div` above the following `script` and `link` needs to 
 <link rel="stylesheet" href="https://undp-data.github.io/stylesheets-for-viz/style/StyleForGraph.css" />
 ```
 
-## Pages on DFP Where the Visualization is Used<a name="section-03"></a>
-_All the pages on the DFP or other places like viva topics etc. where this visualization is embedded or used._
+## Pages on DFx Where the Visualization is Used<a name="section-03"></a>
+* [Enhancing evidence-informed interventions](https://data.undp.org/insights/evidence-informed-interventions)
+* [Bangladesh: Empowering women with climate-resilient livelihoods](https://data.undp.org/insights/evidence-informed-interventions/BGD)
 
 ## Related Repos<a name="section-04"></a>
-* [__name of the data repo__](link to data repo): This is the data sheet for visualization
 * [__stylesheet-for-viz__](https://github.com/UNDP-Data/stylesheets-for-viz): Repo which defines the css settings for the project
 
 ## Global CSS for UI and Graphs<a name="section-05"></a>
