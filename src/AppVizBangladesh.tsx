@@ -269,6 +269,7 @@ function AppVizBangladesh() {
       height={800}
       leftMargin={420}
       tooltip={tooltip}
+      backgroundColor
     />
   );
 }
