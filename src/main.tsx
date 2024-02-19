@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import AppVizAssessments from './AppVizAssessments';
 import AppVizMap from './AppVizMap';
+import AppVizBangladesh from './AppVizBangladesh';
 
 const getEl = (embedSelector: string) => {
   if (typeof embedSelector === 'string') {
@@ -32,6 +33,15 @@ if (vizMap) {
   rootEmbed.render(
     <React.StrictMode>
       <AppVizMap />
+    </React.StrictMode>,
+  );
+}
+const vizBangladesh = getEl('[data-viz-bangladesh]');
+if (vizBangladesh) {
+  const rootEmbed = ReactDOM.createRoot(vizBangladesh);
+  rootEmbed.render(
+    <React.StrictMode>
+      <AppVizBangladesh />
     </React.StrictMode>,
   );
 }

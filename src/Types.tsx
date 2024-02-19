@@ -31,9 +31,11 @@ export interface HorizontalGroupedBarGraphDataType {
 }
 
 export interface DumbbellChartDataType {
-  x: number[];
+  x: number[] | undefined;
   label: string;
+  title?: boolean;
   data?: object;
+  p?: number;
 }
 
 export interface DonutChartDataType {
