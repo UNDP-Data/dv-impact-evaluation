@@ -25,7 +25,7 @@ const tooltip = (d: any) => {
                     className='undp-typography margin-bottom-00'
                     style={{ fontSize: '1rem', padding: 0, margin: 0 }}
                   >
-                    Standardized Effect:
+                    Standardized effect:
                   </p>
                   <p
                     className='undp-typography margin-bottom-00'
