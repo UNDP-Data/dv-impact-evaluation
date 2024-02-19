@@ -78,7 +78,7 @@ export function DumbbellChart(props: Props) {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        width: 'fit-content',
+        width: '100%',
         flexGrow: width ? 0 : 1,
         padding: backgroundColor
           ? padding || 'var(--spacing-05)'
@@ -129,7 +129,7 @@ export function DumbbellChart(props: Props) {
             ref={graphDiv}
           >
             <div
-              className='flex-div flex-row '
+              className='flex-div flex-row margin-bottom-04'
               style={{
                 lineHeight: 0,
               }}

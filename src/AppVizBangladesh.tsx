@@ -262,12 +262,12 @@ function AppVizBangladesh() {
         },
       ]}
       graphTitle='Impact estimates for different indicators'
-      width={1024}
       showDotValue={false}
       source='Impact Evaluation Report, 2024'
       dotRadius={4}
       height={800}
-      leftMargin={420}
+      truncateBy={40}
+      leftMargin={250}
       tooltip={tooltip}
       backgroundColor
     />
