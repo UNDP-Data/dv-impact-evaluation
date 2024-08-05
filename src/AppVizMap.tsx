@@ -108,7 +108,6 @@ function AppVizMap() {
         { countryCode: 'ZMB', x: 2508, status: 'In progress' },
         { countryCode: 'LBR', x: undefined, status: 'In progress' },
         { countryCode: 'MNG', x: undefined, status: 'In progress' },
-        { countryCode: 'IND', x: undefined, status: 'In progress' },
       ]}
       height={780}
       scale={250}
