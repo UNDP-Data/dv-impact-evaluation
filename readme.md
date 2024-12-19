@@ -1,5 +1,5 @@
 # Impact Evaluation Data Visualization
-#### This project aims to provide interactive visualizations for exploring impact evaluation data [Click here to see the interface]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}}).
+This project aims to provide interactive visualizations for exploring impact evaluation data [Click here to see the interface](https://gentle-smoke-004caf210.4.azurestaticapps.net).
 
 ## Table of Contents
 * [Link for the visualization](#section-01)
@@ -15,10 +15,10 @@
 * [Tooling Setup](#section-10)
 
 ## Link for the visualization<a name="section-01"></a>
-[{{https://gentle-smoke-004caf210.4.azurestaticapps.net}}]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}})
+[https://gentle-smoke-004caf210.4.azurestaticapps.net](https://gentle-smoke-004caf210.4.azurestaticapps.net)
 
 ## Deployment<a name="deployment"></a>
-The Production site deployed using Azure Static Web App and work flow can be found [here]({{https://gentle-smoke-004caf210.4.azurestaticapps.net}})
+The Production site deployed using Azure Static Web App and work flow can be found [here](https://github.com/UNDP-Data/dv-impact-evaluation/blob/main/.github/workflows/azure-static-web-apps-gentle-smoke-004caf210.yml)
 
 ## Steps to Integrating the Visualization in the Data Futures Exchange or Any Other Page<a name="section-02"></a>
 Add the following div in the page
@@ -38,7 +38,7 @@ The Line Chart Visualization for the landing page
 
 Apart from the mentioned `div` above the following `script` and `link` needs to be added to the `head` or in the embed code
 ```
-<script defer src="<Link to the Visualization Mentioned Above>/static/js/main.js"></script>
+<script defer src="<https://gentle-smoke-004caf210.4.azurestaticapps.net/static/js/main.js"></script>
 <link rel="stylesheet" href="https://undp-data.github.io/stylesheets-for-viz/style/mainStyleSheet.css" />
 <link rel="stylesheet" href="https://undp-data.github.io/stylesheets-for-viz/style/StyleForGraphingInterface.css" />
 <link rel="stylesheet" href="https://undp-data.github.io/stylesheets-for-viz/style/StyleForGraph.css" />
